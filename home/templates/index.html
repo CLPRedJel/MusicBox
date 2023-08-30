@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Record</title>
+  <link rel="stylesheet" href={% static "./css/app.css"%}>
+  <script>
+    var csrfToken = "{{ csrf_token }}";
+  </script>
+</head>
+
+<body>
+  <div id="container">
+    <div id="inner_container">
+      <div id="square">
+        <div id="duration">Hold button to record</div>
+        <div id="circle_outline"></div>
+        <div id="circle"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src={% static "./js/recorder.js"%}></script>
+  <script src={% static "./js/jquery.js"%}></script>
+  <script src={% static "./js/app.js"%}></script>
+  <script src={% static "./js/soundmeter.js"%}></script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+    document.body.onresize = function () {
+      const ratio = 3 / 4;
+      const height = document.body.clientHeight;
+      const width = document.body.clientWidth;
+      const ch = Math.min(height, width * ratio);
+      const cw = ch / ratio;
+
+      container.style.width = (cw - 20) + 'px';
+      container.style.height = (ch - 20) + 'px';
+
+      square.style.width = inner_container.clientHeight - 20 + 'px';
+      square.style.height = inner_container.clientHeight - 20 + 'px';
+    }
+
+    document.body.onresize();
+  </script>
+
+</body>
+
+</html>
