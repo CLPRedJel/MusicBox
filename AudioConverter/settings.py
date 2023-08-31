@@ -25,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-7=3%dg$_lf^^4bsdaq#=&7&etlw=0e)$d9&k%wc+p5_$hc*5q6'
-SECRET_KEY = config('SECRET_KEY')
+SECRET_KEY = 'django-insecure-7=3%dg$_lf^^4bsdaq#=&7&etlw=0e)$d9&k%wc+p5_$hc*5q6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', cast = bool)
+DEBUG = True
 
 ALLOWED_HOSTS = ['musicbox-432412d501b6.herokuapp.com', '127.0.0.1']
 
